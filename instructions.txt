@@ -1,0 +1,44 @@
+* Program author/editor:
+* Name: Rasmus Kivinen
+* Student number: 285870
+* UserID: kivinenr
+* E-Mail: rasmus.kivinen@tuni.fi
+
+Tetris-projektin käyttöohjeet
+ -Aloittaaksesi pelin, valitse vaikeustaso ja paina start-nappia
+ -Palikkaa ohjataan seuraavilla tavoilla:
+  *L-, D- ja R- napit sekä näppäimistön nuolet oikealle, alas ja vasemmalle liikuttavat palikkaa
+  *Flip-nappi tai välilyönti peilaa palikan pystysuunnassa
+  *Drop-nappi tai vasen ctrl tiputtaa palikan niin alas kun se voi mennä
+ -Peli laskee, kuinka monta neliötä (tetrispalikan perusosaa, kaikissa 4) näytöllä on.
+  -Tämä on pelaajan pistemäärä, joka tallennetaan tetrishiscore.txt-tiedostoon, jos pelaaja
+   antaa nimensä pelin loputtua ja painaa submit score - nappia
+ -Peli loppuu, kun peli yrittää lisätä uutta palikkaa, mutta sen paikka (keskellä ylhäällä)
+  on jo täynnä
+
+
+Lisäominaisuudet:
+ -Kaikki tetrominot toteutettu
+ -Pystyy kääntämään (peilaamaan)
+ -Pystyy liikuttamaan pysähtynyttä tetrominoa, kunnes seuraava ilmestyy
+ -Pelin aikana kerrotaan siihen mennessä kulunut aika
+ -Pistelasku
+ -Eri vaikeustasot, vaikuttaa putoamisnopeuteen
+ -Putoaminen nopeutuu pelin edetessä
+ -Pelissä on tulostaulu, tulokset tallentuvat tiedostoon tetrishiscore.txt
+ -Pelissä on nappi ja näppäinkomento, joilla tetromino putoaa niin alas kuin mahdollista
+
+
+Toiminnallisuudesta:
+ -Gravity_timerin lähettäessä timeout-signaalin ohjelma kutsuu drop_all funktiota, joka yrittää
+  pudottaa kaikkia palikoita yhden alaspäin
+ -Aina, kun viimeisin palikka on pysähtynyt, luodaan uusi palikka create_random_tetrominoa käyttäen
+
+
+Suunnittelusta:
+ -Päätin toteuttaa ohjelman käyttämättä uusia luokkia, ja sain sillä mielestäni toteutettua hyvin
+  toimivan ohjelman. Ongelmana tässä oli toisaalta se, että palikoiden kiertäminen 90 astetta
+  sekä rivinpoisto olisivat olleet melko hankala toteuttaa.
+ -Selvennykseksi siis kaikki tetrominot ovat vektoreita, jotka sisältävät QGraphicsRectItem-
+  osoittimia.
+ 
